@@ -9,22 +9,24 @@ This repo contains the INFO 621 final project of Our (Pineapple Programmers) tea
   
 ## Data Preparation (Part 1)
 
-### Step 1: Parsing the PDF document
+### Step 1.1: Parsing the PDF document
  The raw data: EngineeringReference.pdf
  
-### Step 2: Improving the text
+### Step 1.2: Improving the text
 
-### Step 3: Geneating fine-tuning training data
+### Step 1.3: Geneating fine-tuning training data
 
-### Step 4: Geneating fine-tuning testing data
+### Step 1.4: Geneating fine-tuning testing data
 
 
 ## LLM Execution (Part 2)
 
-### Step 1: Fine-tuning
+### Step 2.1: Fine-tuning
+#### Step 2.1.1: Fine-tuning LlaMA 3.2 1B
+#### Step 2.1.2: Fine-tuning LlaMA 3.2 3B
 
-### Step 2: Testing
+### Step 2.2: Testing
 
-### Step 3: Evaluating
+### Step 2.3: Evaluating
 
-### Step 4: Statistics and analysis
+### Step 2.4: Statistics and analysis
