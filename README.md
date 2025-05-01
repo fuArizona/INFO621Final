@@ -4,7 +4,9 @@ This repo contains the INFO 621 final project of Our (Pineapple Programmers) tea
 
 ## Install Requirements
   Python
+  
   GPU
+  
   Libraries according to requirements.txt
   
 ## Data Preparation (Part 1)
