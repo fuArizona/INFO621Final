@@ -75,9 +75,14 @@ This repo contains the INFO 621 final project of Our (Pineapple Programmers) tea
 
 ### Step 2.2: Evaluation
 
-- Upload notebooks/exploratory/GPT4GradeQAs.ipynb to your google colab.
+- Upload the evaluation program notebooks/exploratory/GPT4GradeQAs.ipynb to your google colab.
 
 #### Step 2.2.1: Evaluating LlaMA 3.2 1B Results
+
+- In notebooks/exploratory/GPT4GradeQAs.ipynb, find two lines:
+  + csvFile = pandas.read_csv('/content/drive/MyDrive/Results_LM32_1B_Before.csv', sep=',', header=0, encoding='utf-8')
+  + output_name = "Results_LM32_1B_Before_Scores_"+str(times+1)+".csv"
+- Update the file path and name (Results_LM32_1B_Before) to your 
 
 #### Step 2.2.2: Evaluating LlaMA 3.2 3B Results
 
