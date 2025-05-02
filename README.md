@@ -43,14 +43,14 @@ This repo contains the INFO 621 final project of Our (Pineapple Programmers) tea
 
 #### Step 2.1.1: Fine-tuning and Testing LlaMA 3.2 1B
 
-- Upload LoRAQLoRA_FinetuneLlama_1B.ipynb to the server.
+- Upload notebooks/reproducibility/LoRAQLoRA_FinetuneLlama_1B.ipynb to the server.
 - Perform LoRAQLoRA_FinetuneLlama_1B.ipynb.
 - Upload generated metric files (i.e., Metrics_LM32_1B_Before.csv, Metrics_LM32_1B_QA_LoRA.csv, Metrics_LM32_1B_QA_QLoRA.csv) and result files (i.e., Results_LM32_1B_Before.csv, Results_LM32_1B_QA_LoRA.csv, Results_LM32_1B_QA_QLoRA.csv) from the server to your google colab.
 (Note: *_Before.csv files mean for the foundation model (base) before the fine-tuning.)
 
 #### Step 2.1.2: Fine-tuning and Testing LlaMA 3.2 3B
 
-- Upload LoRAQLoRA_FinetuneLlama_3B.ipynb to the server.
+- Upload notebooks/reproducibility/LoRAQLoRA_FinetuneLlama_3B.ipynb to the server.
 - Perform LoRAQLoRA_FinetuneLlama_3B.ipynb.
 - Upload generated metric files (i.e., Metrics_LM32_3B_Before.csv, Metrics_LM32_3B_QA_LoRA.csv, Metrics_LM32_3B_QA_QLoRA.csv) and result files (i.e., Results_LM32_3B_Before.csv, Results_LM32_3B_QA_LoRA.csv, Results_LM32_3B_QA_QLoRA.csv) from the server to your google colab.
 (Note: *_Before.csv files mean for the foundation model (base) before the fine-tuning.)
@@ -68,7 +68,6 @@ This repo contains the INFO 621 final project of Our (Pineapple Programmers) tea
 - Update the file name (Results_LM32_1B_Before) to your testing result file (Results_LM32_1B_QA_LoRA) after LoRA fine-tuning and then run GPT4GradeQAs.ipynb.
 - Update the file name (Results_LM32_1B_QA_LoRA) to your testing result file (Results_LM32_1B_QA_QLoRA) after LoRA fine-tuning and then run GPT4GradeQAs.ipynb.
 
-
 #### Step 2.2.2: Evaluating LlaMA 3.2 3B Results
 
 - In notebooks/exploratory/GPT4GradeQAs.ipynb, find two lines:
@@ -80,5 +79,5 @@ This repo contains the INFO 621 final project of Our (Pineapple Programmers) tea
 - 
 ### Step 2.3: Statistics and analysis
 
-- Download all metric files (i.e., Metrics_LM32_1B_Before.csv, Metrics_LM32_1B_QA_LoRA.csv, Metrics_LM32_1B_QA_QLoRA.csv, Metrics_LM32_3B_Before.csv, Metrics_LM32_3B_QA_LoRA.csv, Metrics_LM32_3B_QA_QLoRA.csv) and result files (i.e., Results_LM32_1B_Before.csv, Results_LM32_1B_QA_LoRA.csv, Results_LM32_1B_QA_QLoRA.csv, Results_LM32_3B_Before.csv, Results_LM32_3B_QA_LoRA.csv, Results_LM32_3B_QA_QLoRA.csv) from the server to your local computer.
-- 
+- Download all metric files (i.e., Metrics_LM32_1B_Before.csv, Metrics_LM32_1B_QA_LoRA.csv, Metrics_LM32_1B_QA_QLoRA.csv, Metrics_LM32_3B_Before.csv, Metrics_LM32_3B_QA_LoRA.csv, Metrics_LM32_3B_QA_QLoRA.csv) and result files (i.e., Results_LM32_1B_Before.csv, Results_LM32_1B_QA_LoRA.csv, Results_LM32_1B_QA_QLoRA.csv, Results_LM32_3B_Before.csv, Results_LM32_3B_QA_LoRA.csv, Results_LM32_3B_QA_QLoRA.csv) from the server to a folder (e.g., experiments/) in your local computer.
+- Locally perform notebooks/reproducibility/CompareMetrics.ipynb.
