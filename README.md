@@ -5,7 +5,7 @@ This repo contains the INFO 621 final project of Our (Pineapple Programmers) tea
 ## Install Requirements
   * Python  
   * A conda environment for Jupyter Notebook    
-  * GPUs    
+  * (NVIDIA H100)GPUs    
   * Libraries according to requirements.txt  
   * OpenAI API key
   
@@ -80,4 +80,5 @@ This repo contains the INFO 621 final project of Our (Pineapple Programmers) tea
 ### Step 2.3: Statistics and analysis
 
 - Download all metric files (i.e., Metrics_LM32_1B_Before.csv, Metrics_LM32_1B_QA_LoRA.csv, Metrics_LM32_1B_QA_QLoRA.csv, Metrics_LM32_3B_Before.csv, Metrics_LM32_3B_QA_LoRA.csv, Metrics_LM32_3B_QA_QLoRA.csv) and result files (i.e., Results_LM32_1B_Before.csv, Results_LM32_1B_QA_LoRA.csv, Results_LM32_1B_QA_QLoRA.csv, Results_LM32_3B_Before.csv, Results_LM32_3B_QA_LoRA.csv, Results_LM32_3B_QA_QLoRA.csv) from the server to a folder (e.g., experiments/) in your local computer.
-- Locally perform notebooks/reproducibility/CompareMetrics.ipynb.
+- Locally perform notebooks/reproducibility/CompareMetrics.ipynb to compare the metrics of the foundational models (bases) and LoRA/QLoRA fine-tund models of Llama 3.2 1B, 3B, and 11B.
+- Locally perform notebooks/reproducibility/get_questions_answers_scores.ipynb to generate a csv file (i.e., QAS_1B3B.csv) the results and corresponding evluation scores of the foundational models (bases) and LoRA/QLoRA fine-tund models of Llama 3.2 1B, 3B, and 11B.
