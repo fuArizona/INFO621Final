@@ -1,65 +1,65 @@
 # Fine-tuning Data Curation for LLM-based Question-Answering Using LoRA/QLoRA for a Specific Domain
 
-This repo contains the INFO 621 final project of Our (Pineapple Programmers) team, which includes three team members: Xiaoqin Fu, Subhrajeet Ghosh, and Usama Ahmed. In this work, we propose a fine-tuning data curation method for answering questions of a specific domain: building energy.
+This repository contains the INFO 621 final project of Our (Pineapple Programmers) team, which includes three team members: Xiaoqin Fu, Subhrajeet Ghosh, and Usama Ahmed. In this project, we develop a fine-tuning data curation method for answering questions of a specific domain: building energy.
 
 ## Install Requirements
   * Python  
-  * A conda environment for Jupyter Notebook    
-  * (NVIDIA H100)GPUs    
-  * Libraries according to requirements.txt  
+  * Conda environment (for Jupyter Notebooks) 
+  * (NVIDIA H100) GPUs    
+  * Dependencies listed in requirements.txt 
   * OpenAI API key
   
-## Data Preparation (Part 1)
+## Part 1: Data Preparation
 
-### Step 1.1: Parsing the PDF document (raw data)
+### Step 1.1: Parsing PDF document (raw data)
 
-- Locally perform notebooks/exploratory/PDFToTxt.ipynb to parse the PDF document "data/raw/EngineeringReference.pdf" to generate the parsed (unstructured) text file "data/processed/EngineeringReference.txt". 
+- Locally run notebooks/exploratory/PDFToTxt.ipynb to parse the PDF document "data/raw/EngineeringReference.pdf" to generate the parsed (unstructured) text file "data/processed/EngineeringReference.txt". 
  
 ### Step 1.2: Improving the text
 
-- Upload the unstructured text file "data/processed/EngineeringReference.txt" to your Google Drive.
-- Upload notebooks/exploratory/GPT4ImproveTxt.ipynb to your google colab.
-- On your google colab, perform GPT4ImproveTxt.ipynb to improve the parsed (unstructured) text file "EngineeringReference.txt" to generated the improved (structured) text file "data/processed/EngineeringReference1_5.txt".
+- Upload the unstructured text file "data/processed/EngineeringReference.txt" to Google Drive.
+- Upload notebooks/exploratory/GPT4ImproveTxt.ipynb to Google Colab.
+- On your google colab, run GPT4ImproveTxt.ipynb to improve the parsed (unstructured) text file "EngineeringReference.txt" to generated the improved (structured) text file "data/processed/EngineeringReference1_5.txt".
 
-### Step 1.3: Geneating fine-tuning training data
+### Step 1.3: Geneating Fine-tuning Training Data
 
-- Upload notebooks/exploratory/GPT4TxtToQA.ipynb to your google colab.
-- On your google colab, perform GPT4ImproveTxt.ipynb to generate many (193) question-answer pairs and to save them in the text file "EngineeringReference1_5_QAGPT4.txt".
-- From your google colab, download the text file "EngineeringReference1_5_QAGPT4.txt" to a local folder, such as data/processed/.
-- Locally perform TxtToJSON.py to transfer the improve text file "EngineeringReference1_5_QAGPT4.txt" to the JSON file "EngineeringReference1_5_QAGPT4.json", as the training data.
+- Upload notebooks/exploratory/GPT4TxtToQA.ipynb to Google Colab.
+- On Google Colab, run GPT4ImproveTxt.ipynb to generate many (193) question-answer pairs and to save them in the text file "EngineeringReference1_5_QAGPT4.txt".
+- From Google Colab, download the text file "EngineeringReference1_5_QAGPT4.txt" to a local folder, such as data/processed/.
+- Locally run TxtToJSON.py to transfer the improve text file "EngineeringReference1_5_QAGPT4.txt" to the JSON file "EngineeringReference1_5_QAGPT4.json", as the training data.
 
-### Step 1.4: Geneating fine-tuning testing data
+### Step 1.4: Geneating Fine-tuning Testing Data
 
-- Upload notebooks/exploratory/GPT4TxtToQA_testdata.ipynb to your google colab.
-- On your google colab, perform GPT4ImproveTxt.ipynb to generate a few (17) and different question-answer pairs and to save them in the text file "EngineeringReference1_5_TESTQAGPT4omini.txt".
-- From your google colab, download the text file "EngineeringReference1_5_TESTQAGPT4omini.txt" to a local folder, such as data/processed/.
-- Locally perform TxtToJSON.py to transfer the improve text file "EngineeringReference1_5_TESTQAGPT4omini.txt" to the JSON file "EngineeringReference1_5_TESTQAGPT4omini.json", as the testing data.
+- Upload notebooks/exploratory/GPT4TxtToQA_testdata.ipynb to Google Colab.
+- On Google Colab, run GPT4ImproveTxt.ipynb to generate a few (17) and different question-answer pairs and to save them in the text file "EngineeringReference1_5_TESTQAGPT4omini.txt".
+- From Google Colab, download the text file "EngineeringReference1_5_TESTQAGPT4omini.txt" to a local folder, such as data/processed/.
+- Locally run TxtToJSON.py to transfer the improve text file "EngineeringReference1_5_TESTQAGPT4omini.txt" to the JSON file "EngineeringReference1_5_TESTQAGPT4omini.json", as the testing data.
 
-## LLM Execution (Part 2)
+## Part 2: LLM Execution 
 
 ### Step 2.1: Fine-tuning and Testing 
 
 - Upload the traning data “EngineeringReference1_5_QAGPT4.json“ and the testing data "EngineeringReference1_5_TESTQAGPT4omini.json" to a folder (such as /srv/data1/fuxiaoqin/Downloads/) in the server with a conda environment and (three 80 GB NVIDIA H100) GPUs.
 
-#### Step 2.1.1: Fine-tuning and Testing LlaMA 3.2 1B
+#### Step 2.1.1: Fine-tuning and Testing Llama 3.2 1B
 
 - Upload notebooks/reproducibility/LoRAQLoRA_FinetuneLlama_1B.ipynb to the server.
-- Perform LoRAQLoRA_FinetuneLlama_1B.ipynb.
-- Upload generated metric files (i.e., Metrics_LM32_1B_Before.csv, Metrics_LM32_1B_QA_LoRA.csv, Metrics_LM32_1B_QA_QLoRA.csv) and result files (i.e., Results_LM32_1B_Before.csv, Results_LM32_1B_QA_LoRA.csv, Results_LM32_1B_QA_QLoRA.csv) from the server to your google colab.
+- Run LoRAQLoRA_FinetuneLlama_1B.ipynb.
+- Upload generated metric files (i.e., Metrics_LM32_1B_Before.csv, Metrics_LM32_1B_QA_LoRA.csv, Metrics_LM32_1B_QA_QLoRA.csv) and result files (i.e., Results_LM32_1B_Before.csv, Results_LM32_1B_QA_LoRA.csv, Results_LM32_1B_QA_QLoRA.csv) from the server to Google Colab.
 (Note: *_Before.csv files mean for the foundation model (base) before the fine-tuning.)
 
-#### Step 2.1.2: Fine-tuning and Testing LlaMA 3.2 3B
+#### Step 2.1.2: Fine-tuning and Testing Llama 3.2 3B
 
 - Upload notebooks/reproducibility/LoRAQLoRA_FinetuneLlama_3B.ipynb to the server.
-- Perform LoRAQLoRA_FinetuneLlama_3B.ipynb.
-- Upload generated metric files (i.e., Metrics_LM32_3B_Before.csv, Metrics_LM32_3B_QA_LoRA.csv, Metrics_LM32_3B_QA_QLoRA.csv) and result files (i.e., Results_LM32_3B_Before.csv, Results_LM32_3B_QA_LoRA.csv, Results_LM32_3B_QA_QLoRA.csv) from the server to your google colab.
+- Run LoRAQLoRA_FinetuneLlama_3B.ipynb.
+- Upload generated metric files (i.e., Metrics_LM32_3B_Before.csv, Metrics_LM32_3B_QA_LoRA.csv, Metrics_LM32_3B_QA_QLoRA.csv) and result files (i.e., Results_LM32_3B_Before.csv, Results_LM32_3B_QA_LoRA.csv, Results_LM32_3B_QA_QLoRA.csv) from the server to Google Colab.
 (Note: *_Before.csv files mean for the foundation model (base) before the fine-tuning.)
 
 ### Step 2.2: Evaluation
 
-- Upload the evaluation program notebooks/exploratory/GPT4GradeQAs.ipynb to your google colab.
+- Upload the evaluation program notebooks/exploratory/GPT4GradeQAs.ipynb to Google Colab.
 
-#### Step 2.2.1: Evaluating LlaMA 3.2 1B Results
+#### Step 2.2.1: Evaluating Llama 3.2 1B Results
 
 - In notebooks/exploratory/GPT4GradeQAs.ipynb, find two lines:
   + csvFile = pandas.read_csv('/content/drive/MyDrive/Results_LM32_1B_Before.csv', sep=',', header=0, encoding='utf-8')
@@ -68,7 +68,7 @@ This repo contains the INFO 621 final project of Our (Pineapple Programmers) tea
 - Update the file name (Results_LM32_1B_Before) to your testing result file (Results_LM32_1B_QA_LoRA) after LoRA fine-tuning and then run GPT4GradeQAs.ipynb.
 - Update the file name (Results_LM32_1B_QA_LoRA) to your testing result file (Results_LM32_1B_QA_QLoRA) after LoRA fine-tuning and then run GPT4GradeQAs.ipynb.
 
-#### Step 2.2.2: Evaluating LlaMA 3.2 3B Results
+#### Step 2.2.2: Evaluating Llama 3.2 3B Results
 
 - In notebooks/exploratory/GPT4GradeQAs.ipynb, find two lines:
   + csvFile = pandas.read_csv('/content/drive/MyDrive/Results_LM32_1B_QA_LoRA.csv', sep=',', header=0, encoding='utf-8')
@@ -77,8 +77,12 @@ This repo contains the INFO 621 final project of Our (Pineapple Programmers) tea
 - Update the file name (Results_LM32_3B_Before) to your testing result file (Results_LM32_3B_QA_LoRA) after LoRA fine-tuning and then run GPT4GradeQAs.ipynb.
 - Update the file name (Results_LM32_3B_Before) to your testing result file (Results_LM32_3B_QA_LoRA) after LoRA fine-tuning and then run GPT4GradeQAs.ipynb.
 - 
-### Step 2.3: Statistics and analysis
+### Step 2.3: Analysis and Visualization
 
 - Download all metric files (i.e., Metrics_LM32_1B_Before.csv, Metrics_LM32_1B_QA_LoRA.csv, Metrics_LM32_1B_QA_QLoRA.csv, Metrics_LM32_3B_Before.csv, Metrics_LM32_3B_QA_LoRA.csv, Metrics_LM32_3B_QA_QLoRA.csv) and result files (i.e., Results_LM32_1B_Before.csv, Results_LM32_1B_QA_LoRA.csv, Results_LM32_1B_QA_QLoRA.csv, Results_LM32_3B_Before.csv, Results_LM32_3B_QA_LoRA.csv, Results_LM32_3B_QA_QLoRA.csv) from the server to a folder (e.g., experiments/) in your local computer.
-- Locally perform notebooks/reproducibility/CompareMetrics.ipynb to compare the metrics of the foundational models (bases) and LoRA/QLoRA fine-tund models of Llama 3.2 1B, 3B, and 11B.
-- Locally perform notebooks/reproducibility/get_questions_answers_scores.ipynb to generate a csv file (i.e., QAS_1B3B.csv) the results and corresponding evluation scores of the foundational models (bases) and LoRA/QLoRA fine-tund models of Llama 3.2 1B, 3B, and 11B.
+- Locally perform notebooks/reproducibility/CompareMetrics.ipynb to compare the metrics of the foundational models (bases) and LoRA/QLoRA fine-tund models of Llama 3.2 1B and 3B.
+- Locally perform notebooks/reproducibility/get_questions_answers_scores.ipynb to generate a csv file (i.e., QAS_1B3B.csv) the results and corresponding evluation scores of the foundational models (bases) and LoRA/QLoRA fine-tund models of Llama 3.2 1B and 3B.
+
+### Step 2.4: Loading Fine-tuned LLMs from Hugging Face (Optional)
+- Upload notebooks/reproducibility/Fine-tuned_Llama_1B_results.ipynb and notebooks/reproducibility/Fine-tuned_Llama_3B_results.ipynb to the server.
+- Run Fine-tuned_Llama_1B_results.ipynb and Fine-tuned_Llama_3B_results.ipynb, respectively.
