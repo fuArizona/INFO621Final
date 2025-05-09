@@ -8,6 +8,7 @@ This repository contains the INFO 621 final project of Our (Pineapple Programmer
   * (NVIDIA H100) GPUs    
   * Dependencies listed in requirements.txt 
   * OpenAI API key
+  * Hugging Face Token
   
 ## Part 1: Data Preparation
 
