@@ -2,6 +2,19 @@
 
 This repository contains the INFO 621 final project of Our (Pineapple Programmers) team, which includes three team members: Xiaoqin Fu, Subhrajeet Ghosh, and Usama Ahmed. In this project, we develop a fine-tuning data curation method for answering questions of a specific domain: building energy.
 
+## Project Structure
+
+ * [data](./data)
+   * [file21.ext](./data/file21.ext)
+   * [file22.ext](./data/file22.ext)
+   * [file23.ext](./data/file23.ext)
+ * [notebooks](./notebooks)
+   * [file11.ext](./notebooks/file11.ext)
+   * [file12.ext](./notebooks/file12.ext)
+ * [file_in_root.ext](./file_in_root.ext)
+ * [README.md](./README.md)
+ * [dir3](./dir3)
+   
 ## Install Requirements
   * Python  
   * Conda environment (for Jupyter Notebooks) 
