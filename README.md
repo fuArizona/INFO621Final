@@ -11,9 +11,9 @@ This repository contains the INFO 621 final project of Our (Pineapple Programmer
  * [notebooks](./notebooks)
    * [file11.ext](./notebooks/file11.ext)
    * [file12.ext](./notebooks/file12.ext)
- * [file_in_root.ext](./file_in_root.ext)
+ * [Environment File](./environment.yml)
  * [README.md](./README.md)
- * [dir3](./dir3)
+ * [Dependency Requirement](./requirements.txt)
    
 ## Install Requirements
   * Python  
