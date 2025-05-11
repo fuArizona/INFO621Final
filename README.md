@@ -2,18 +2,27 @@
 
 This repository contains the INFO 621 final project of Our (Pineapple Programmers) team, which includes three team members: Xiaoqin Fu, Subhrajeet Ghosh, and Usama Ahmed. In this project, we develop a fine-tuning data curation method for answering questions of a specific domain: building energy.
 
-## Project Structure
-
- * [data](./data)
-   * [file21.ext](./data/file21.ext)
-   * [file22.ext](./data/file22.ext)
-   * [file23.ext](./data/file23.ext)
- * [notebooks](./notebooks)
-   * [file11.ext](./notebooks/file11.ext)
-   * [file12.ext](./notebooks/file12.ext)
- * [Environment File](./environment.yml)
- * [README.md](./README.md)
- * [Dependency Requirement](./requirements.txt)
+## Directory Structure
+```
+.
+├── data/
+│   ├── processed/  (Cleaned and formatted data)
+│   └── raw/  (Original data)
+├── experiments/  (Experimential Results)
+├── notebooks/
+│   ├── exploratory/  (Initial data analysis)
+│   └── reproducibility/  (Code for replication)
+├── src/
+│   ├── config/  (Incluidng LoRA and QLoRA fine-tuning config)
+│   └── models/  (Code for replication)
+│       ├── newModel1B_QA/ (Empty due to the large size)
+│       ├── newModel3B_QA/ (Empty due to the large size)
+│       └── pretrained/ (Empty due to the large size)
+├── environment.yml (The environment file)
+├── README.md
+├── INFO_621_Final_Project_Report.pdf (The project report)
+└── requirements.txt (The requirements of dependencies)
+```
    
 ## Install Requirements
   * Python  
