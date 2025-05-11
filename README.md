@@ -13,7 +13,7 @@ This repository contains the INFO 621 final project of Our (Pineapple Programmer
 │   ├── exploratory/  (Initial data analysis)
 │   └── reproducibility/  (Code for replication)
 ├── src/
-│   ├── config/  (Incluidng LoRA and QLoRA fine-tuning config)
+│   ├── config/  (LoRA and QLoRA fine-tuning config)
 │   └── models/  (Code for replication)
 │       ├── newModel1B_QA/ (Empty due to the large size)
 │       ├── newModel3B_QA/ (Empty due to the large size)
