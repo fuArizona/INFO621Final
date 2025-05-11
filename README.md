@@ -18,6 +18,7 @@ This repository contains the INFO 621 final project of Our (Pineapple Programmer
 │       ├── newModel1B_QA/ (Empty due to the large size)
 │       ├── newModel3B_QA/ (Empty due to the large size)
 │       └── pretrained/ (Empty due to the large size)
+├── video/ (The videos demonstrating the execution of various programs on the server)
 ├── environment.yml (The environment file)
 ├── README.md
 ├── INFO_621_Final_Project_Report.pdf (The project report)
