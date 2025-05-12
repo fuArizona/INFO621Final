@@ -1,3 +1,4 @@
+# Convert txt files to json files
 import json
 # import re
 # import spacy
@@ -23,12 +24,7 @@ def TripleFromTwoLines(line, nextLine):
         return oneTriple
     line2 = str(line).replace('"question": ', '').replace('"answer": ', '').replace('"q": ', '').replace('"a": ', '').replace('{', '').replace('}', '').replace('"', '').replace(',', '')
     nextLine2 = str(nextLine).replace('"question": ', '').replace('"answer": ', '').replace('"q": ', '').replace('"a": ', '').replace('{', '').replace('}', '').replace('"', '').replace(',', '')
-    # print(f"line2 is {line2}.")
-    # words = line2.split("?")
-    # if len(words)<2:
-    #     return oneTriple
-    # wBefore = str(words[0]).strip()
-    # wAfter  = str(words[1]).strip()     
+ 
     if len(line2)>3 and len(nextLine2)>0:  
         oneTriple = {"instruction": "Answer the question truthfully", "input": line2, "output":nextLine2 } 
     return oneTriple
